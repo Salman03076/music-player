@@ -140,6 +140,8 @@ Next.addEventListener("click", () => {
 
 });
 
+console.log("");
+
 
 
 //  Back Button
