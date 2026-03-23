@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+
+<body>
+
+    <button id="listbackbutton"> < Back > </button>
+
+
+    <div id="Templete">
+        <img id="cenorimg" src="" style=" height: 251px; width: 250px;" alt="">
+        <img id="mutebutton" width="40" height="30" src="https://img.icons8.com/ios-filled/50/FFFFFF/mute--v1.png"
+            alt="mute--v1" />
+    </div>
+    <!-- 
+    <div id="backgroundVideo">
+        <video id="video" src="assets\_720P.mp4"></video>
+    </div> -->
+
+
+    <audio id="auiio" src=" "></audio>
+
+    <div id="Control">
+
+        <button id="BackButton" style="background-color: black; border: none;"><svg id="back"
+                xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                <rect x="6" y="5" width="2" height="14" />
+                <polygon id="BackMusic" points="18,5 8,12 18,19" />
+            </svg></button>
+
+
+        <div>
+            <button id="StopButton" style="background-color: black; border: none;"><svg id="play"
+                    xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                    <polygon id="play" points="8,5 19,12 8,19" />
+                </svg></button>
+
+            <button id="playbutton" style="background-color: black; border: none;"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+
+                </svg>
+                </svg></button>
+        </div>
+
+        <button id="Nextbutton" style="background-color: black; border: none;"><svg id="Next"
+                xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                <rect x="16" y="5" width="2" height="14" />
+                <polygon id="NextMusic" points="6,5 16,12 6,19" />
+            </svg></button>
+
+    </div>
+    <!-- 
+    <div id="displayCurrentTime"></div>
+    <div id="diplayDuraton"></div> -->
+
+
+
+
+    <input type="range" id="soundprogress" value="50" min="0" max="100">
+
+    <input type="range" id="progres" value="0" min="0" max="100">
+
+
+    <!-- <input type="range"> -->
+    <div id="firstcontrol">
+        <button id="MusicList"><img id="mlist" src="assets\playlist (1).png" alt="listImage"></button>
+        <button id="audioSond"><img id="soundimg" src="assets\0bc532b3e1f698cf0e8e231a5fc22acd.jpg" alt=""></button>
+        <div>
+
+            <script type="module" src="./dist/main.js"></script>
+</body>
+
+</html>
