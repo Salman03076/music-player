@@ -9,74 +9,103 @@
 <link rel="stylesheet" href="./style.css">
 
 <body>
-
-    <button id="listbackbutton"> < Back > </button>
-
-
-    <div id="Templete">
-        <img id="cenorimg" src="" style=" height: 251px; width: 250px;" alt="">
-        <img id="mutebutton" width="40" height="30" src="https://img.icons8.com/ios-filled/50/FFFFFF/mute--v1.png"
-            alt="mute--v1" />
-    </div>
-    <!-- 
-    <div id="backgroundVideo">
-        <video id="video" src="assets\_720P.mp4"></video>
-    </div> -->
+    <div id="seconbody"></div>
+    <div id="multipletaskArea">
+        
+        
+        <button id="listbackbutton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
 
 
-    <audio id="auiio" src=" "></audio>
 
-    <div id="Control">
-
-        <button id="BackButton" style="background-color: black; border: none;"><svg id="back"
-                xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
-                <rect x="6" y="5" width="2" height="14" />
-                <polygon id="BackMusic" points="18,5 8,12 18,19" />
-            </svg></button>
-
-
-        <div>
-            <button id="StopButton" style="background-color: black; border: none;"><svg id="play"
-                    xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
-                    <polygon id="play" points="8,5 19,12 8,19" />
-                </svg></button>
-
-            <button id="playbutton" style="background-color: black; border: none;"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
-
-                    <rect x="6" y="4" width="4" height="16"></rect>
-                    <rect x="14" y="4" width="4" height="16"></rect>
-
-                </svg>
-                </svg></button>
+        </button>
+        <div id="Templete">
+            <img id="cenorimg" src="" style=" height: 251px; width: 250px;" alt="">
         </div>
 
-        <button id="Nextbutton" style="background-color: black; border: none;"><svg id="Next"
-                xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
-                <rect x="16" y="5" width="2" height="14" />
-                <polygon id="NextMusic" points="6,5 16,12 6,19" />
-            </svg></button>
 
-    </div>
-    <!-- 
-    <div id="displayCurrentTime"></div>
-    <div id="diplayDuraton"></div> -->
+        <audio id="auiio" src=" "></audio>
+     
 
+        <div id="cantorbox1">
+        <div id="Control">
 
-
-
-    <input type="range" id="soundprogress" value="50" min="0" max="100">
-
-    <input type="range" id="progres" value="0" min="0" max="100">
+            <button id="BackButton" style="background-color: rgba(0, 0, 0, 0); border: none;"><svg id="back"
+                    xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                    <rect x="6" y="5" width="2" height="14" />
+                    <polygon id="BackMusic" points="18,5 8,12 18,19" />
+                </svg></button>
 
 
-    <!-- <input type="range"> -->
-    <div id="firstcontrol">
-        <button id="MusicList"><img id="mlist" src="assets\playlist (1).png" alt="listImage"></button>
-        <button id="audioSond"><img id="soundimg" src="assets\0bc532b3e1f698cf0e8e231a5fc22acd.jpg" alt=""></button>
-        <div>
+            <div>
+                <button id="StopButton" style="background-color: rgba(0, 0, 0, 0); border: none;"><svg id="play"
+                        xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+                        <polygon id="play" points="8,5 19,12 8,19" />
+                    </svg></button>
 
-            <script type="module" src="./dist/main.js"></script>
+                <button id="playbutton" style="background-color: rgba(0, 0, 0, 0); border: none;"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
+
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+
+                    </svg>
+                    </svg></button>
+            </div>
+
+            <button id="Nextbutton" style="background-color: rgba(0, 0, 0, 0); border: none;"><svg
+                    xmlns="http://www.w3.org/2000/svg" backgruound="white" width="64" height="64" viewBox="0 0 24 24"
+                    fill="white">
+                    <rect x="16" y="5" width="2" height="14" />
+                    <polygon id="NextMusic" points="6,5 16,12 6,19" />
+
+        </div>
+        </svg></button>
+
+
+
+
+        <div id="progressBox">
+            <span id="displayCurrentTime">0:00</span>
+            <input type="range" id="progres" value="0" min="0" max="100">
+            <span id="diplayDuraton">0:00</span>
+        </div>
+
+
+        <input type="range" id="soundprogress" value="50" min="0" max="100">
+        <div id="firstcontrol">
+
+
+            <button id="MusicList"> <svg id="mlist" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="5" width="18" height="2" rx="1" fill="white" />
+                    <rect x="3" y="11" width="12" height="2" rx="1" fill="white" />
+                    <rect x="3" y="17" width="12" height="2" rx="1" fill="white" />
+                    <path d="M18 13L22 16L18 19V13Z" fill="white" />
+                </svg></button>
+
+
+
+            <button id="audioSond"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="white" stroke="white" stroke-width="2"
+                        stroke-linejoin="round" />
+                    <path d="M15.5 8.5C16.8 9.8 17.5 10.8 17.5 12C17.5 13.2 16.8 14.2 15.5 15.5" stroke="white"
+                        stroke-width="2" stroke-linecap="round" />
+                    <path d="M19 5C21 7.5 22 9.5 22 12C22 14.5 21 16.5 19 19" stroke="white" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg></button>
+
+            <div>
+                </div>
+        </div>
+            </div>
+
+
+                <script type="module" src="./output/main.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ const Templete1 = document.querySelector("#Templete") as HTMLDivElement;
 const firstcontrol = document.querySelector("#firstcontrol") as HTMLDivElement;
 const Control = document.querySelector("#Control") as HTMLDivElement;
 const listbackbutton = document.querySelector("#listbackbutton") as HTMLButtonElement;
-
+const multipletaskArea = document.querySelector("#multipletaskArea") as HTMLDivElement;
 
 // music list 
 const mlist = document.querySelector("#mlist") as HTMLButtonElement;
@@ -36,6 +36,12 @@ const templete: string[] = [
     "assets/images.jpg",
     "assets/maxresdefault (5).jpg",
     "assets/maxresdefault (6).jpg",
+    "assets/Bairi-Rajasthani-2026-20260204121225-500x500.jpg",
+    "assets/hq720.jpg",
+    "assets/Dooron-Dooron-Punjabi-2022-20220124231445-500x500.jpg",
+    "assets/sddefault (2).jpg",
+    "assets/artworks-L6qh13MiGYMTKk21-zXzmEQ-t1080x1080.jpg"
+
 
 ]
 
@@ -50,7 +56,12 @@ const MusicList: string[] = [
     "Dhanda Nyoliwala .mp3",
     "GURU RANDHAWA - _AZUL_ .mp3",
     "Tum Ho Toh ｜ Saiyaar Song",
-    "Diljit Dosanjh I Sanya Malhotra "
+    "Diljit Dosanjh I Sanya Malhotra ",
+    "Bairi-Rajasthani",
+    "Deewane.mp3",
+    "Dooron Dooron.mp3",
+    "Full Video_ Raanjhan .mp3",
+    "Shubh - Supreme.mp3"
 
 
 ]
@@ -71,6 +82,12 @@ const audiodata: string[] = [
     "assets/GURU RANDHAWA - _AZUL_ .mp3",
     "assets/Tum Ho Toh Song ｜ Saiyaara ｜.mp3",
     "assets/Diljit Dosanjh I Sanya Malhotra I.mp3",
+    "assets/brairi.mp3",
+    "assets/Deewane.mp3",
+    "assets/Dooron Dooron.mp3",
+    "assets/Full Video_ Raanjhan .mp3",
+    "assets/Shubh - Supreme.mp3"
+
 ];
 
 
@@ -92,23 +109,20 @@ play.addEventListener("click", () => {
     let rotetedeg = 0;
 
     if (stop) {
-      
-            for (rotetedeg += 0; rotetedeg < 360;) {
-                rotetedeg++
 
-                cenorimg.style.transform = `rotate(${rotetedeg}deg)`;
-            } // speed
+        for (rotetedeg += 0; rotetedeg < 360;) {
+            rotetedeg++
 
-        
+            cenorimg.style.transform = `rotate(${rotetedeg}deg)`;
+        } // speed
+
+
     } else {
         rotetedeg = 0;
 
     }
 
-    // for (let rotetedeg = 0; rotetedeg < 360; rotetedeg++) {
 
-    //     cenorimg.style.transform = `rotate(${rotetedeg}deg)`;
-    // }
 
 });
 
@@ -124,6 +138,7 @@ stop.addEventListener("click", () => {
 
 
 //  Next Button
+
 Next.addEventListener("click", () => {
 
     stop.style.display = "block";
@@ -140,7 +155,6 @@ Next.addEventListener("click", () => {
 
 });
 
-console.log("");
 
 
 
@@ -163,11 +177,13 @@ Back.addEventListener("click", () => {
 
 
 
+
 // progress dlide controler
 audio.addEventListener("timeupdate", () => {
     const percent = (audio.currentTime / audio.duration) * 100;
     progres.value = percent.toString();
 });
+
 
 progres.addEventListener("input", () => {
     const Time = (Number(progres.value) / 100) * audio.duration;
@@ -175,19 +191,29 @@ progres.addEventListener("input", () => {
     audio.play()
     stop.style.display = "block";
     play.style.display = "none"
-
-
 });
 
 
+
+
+
 // updata current time and duration
-// setInterval(() => {
-//     displayCurrentTime.innerText = audio.currentTime.toString()
-//     diplayDuraton.innerText = audio.duration.toString();
+setInterval(() => {
 
-// }, 10000);
+    const duration = audio.duration;
+    const currentduration = audio.currentTime;
 
+    const minutes1 = Math.floor(currentduration / 60);
+    const seconds1 = Math.floor(currentduration % 60);
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.floor(duration % 60);
 
+    diplayDuraton.innerText = minutes + ":" + seconds;
+    displayCurrentTime.innerText = minutes1 + ":" + seconds1
+
+}, 100);
+
+//sound ProgresBar
 Soundbtn.addEventListener("click", () => {
     soundprogress.style.display = "block";
 
@@ -219,31 +245,96 @@ table.style.display = "flex";
 table.style.display = "none"
 table.style.justifyContent = "center"
 table.style.flexDirection = "column"
-table.style.zIndex = "-2";
+table.style.zIndex = "3";
 table.style.textAlign = "center"
+
+
+// show the list in table
+for (let listnum = 0; listnum < MusicList.length; listnum++) {
+    let row = document.createElement("tr") as HTMLTableRowElement;
+    let data = document.createElement("td") as HTMLTableCellElement;
+    table.style.backgroundColor = "#ffffff14";
+    row.id = "listnum"
+    row.style.zIndex + "-2"
+    data.style.zIndex = "-2"
+    row.style.textAlign = "start";
+    row.style.width = "30px"
+    data.style.width = "315px";
+    data.style.border = "1px solid black"
+
+
+    multipletaskArea.appendChild(table)
+    table.appendChild(row)
+    row.appendChild(data)
+
+    data.innerText = MusicList[listnum] as string;
+
+
+
+    row.addEventListener("mouseenter", () => {
+        row.style.backgroundColor = "#2d2f2f55";
+
+
+    });
+
+
+
+    row.addEventListener("click", () => {
+        cenorimg.src = templete[listnum] as string;
+        // row.id = "current";
+        audio.src = audiodata[listnum] as string;
+        audio.play()
+        stop.style.display = "block";
+        play.style.display = "none"
+
+        table.style.display = "none"
+        listbackbutton.style.display = "none";
+        Control.style.display = "flex"
+        progres.style.display = "block"
+        firstcontrol.style.display = "block"
+        Templete1.style.display = "block"
+        cenorimg.style.display = "block"
+        displayCurrentTime.style.display = "block";
+        diplayDuraton.style.display = "block";
+
+
+    });
+    row.addEventListener("mouseleave", () => {
+        row.style.backgroundColor = "#982f6e13";
+    });
+
+    document.body.appendChild(table)
+
+
+}
 
 
 
 
 //  music list event 
 mlist.addEventListener("click", () => {
-    
+
     table.style.display = "block";
     listbackbutton.style.display = "block";
-    Control.style.display = "none"
-    progres.style.display = "none"
-    firstcontrol.style.display = "none"
-    Templete1.style.display = "none"
-    cenorimg.style.display = "none"
+    Control.style.display = "none";
+    progres.style.display = "none";
+    firstcontrol.style.display = "none";
+    Templete1.style.display = "none";
+    cenorimg.style.display = "none";
+    displayCurrentTime.style.display = "none";
+    diplayDuraton.style.display = "none";
 
-    
+
 });
+
+
+
 
 
 
 // list  back button
 listbackbutton.addEventListener("click", () => {
-    
+
     table.style.display = "none"
     listbackbutton.style.display = "none";
     Control.style.display = "flex"
@@ -251,39 +342,29 @@ listbackbutton.addEventListener("click", () => {
     firstcontrol.style.display = "block"
     Templete1.style.display = "block"
     cenorimg.style.display = "block"
-    
-    
-    
-    
-    // show the list in table
-    for (let listnum = 0; listnum < MusicList.length; listnum++) {
-        let row = document.createElement("tr") as HTMLTableRowElement;
-        let data = document.createElement("td") as HTMLTableCellElement;
-        table.style.backgroundColor = "#ffffff14";
-    
-        row.style.textAlign = "start";
-        row.style.width = "40px"
-        data.style.width = "770px";
-        data.style.border = "1px solid black"
-    
-    
-    
-        table.appendChild(row)
-        row.appendChild(data)
-    
-        data.innerText = MusicList[listnum] as string;
-    
-    
-    
-    
-        document.body.appendChild(table)
-    
-    
+    displayCurrentTime.style.display = "block";
+    diplayDuraton.style.display = "block";
+
+
+});
+
+function autoplayermusic(): void {
+    if (audio.currentTime == audio.duration) {
+        current++;
+        audio.src = audiodata[current]!;
+        audio.play();
+    } else {
+        console.error("something wrong");
+
+
     }
+}
+
+autoplayermusic()
+
+// const btn = document.querySelector("#btn") as HTMLButtonElement;
 
 
-    
-})
 
 
 
