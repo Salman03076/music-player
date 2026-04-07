@@ -10,7 +10,7 @@ body {
 
 #Templete {
     position: fixed;
-    bottom: 344px;
+    bottom: 478px;
     display: flex;
     justify-self: center;
     align-items: center;
@@ -110,9 +110,9 @@ body {
 }
 
 #firstcontrol {
+        display: flex;
     position: fixed;
-    bottom: 133px;
-    display: flex;
+    bottom: 169px;
     justify-self: center;
     justify-content: space-between;
     width: 280px;
@@ -176,7 +176,7 @@ body {
     background-image: url('assets/af181b29e104f4a37330ed84f03dc091.jpg');
     background-size: cover;
     width: 320px;
-    height: 770px;
+    height: 935px;
     background-color: black;
 
 }
@@ -212,6 +212,5 @@ body {
     width: 321px;
     height: 250px;
     position: fixed;
-    bottom: -50px;
+    bottom: -10px;
 }
-

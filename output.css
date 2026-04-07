@@ -1,0 +1,192 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#Templete {
+  position: fixed;
+  bottom: 478px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  background-color: white;
+  height: 250px;
+  width: 250px;
+  border-radius: 142px;
+}
+
+#Control {
+  position: relative;
+  top: 116px;
+  display: flex;
+  justify-self: center;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: aqua; */
+  height: 70px;
+  width: 300px;
+}
+
+#Stopbutton {
+  background-color: black;
+  align-self: center;
+  height: 50px;
+}
+
+#Backbutton {
+  background-color: black;
+  align-self: center;
+  height: 50px;
+}
+
+#Nextbutton {
+  background-color: rgba(0, 0, 0, 0);
+  position: relative;
+  bottom: 8px;
+  height: 50px;
+}
+
+#playimg {
+  display: none;
+}
+
+#progres {
+  width: 225px;
+}
+
+#playbutton {
+  font-size: 50px;
+  display: none;
+}
+
+#soundimg {
+  height: 50px;
+  border-radius: 50%;
+}
+
+#audioSond {
+  margin-left: 200px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-radius: 50%;
+}
+
+#cenorimg {
+  border-color: white;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px;
+}
+
+#soundprogress {
+  display: none;
+  position: relative;
+  bottom: 370px;
+  left: 237px;
+  transform: rotatez(-90deg);
+}
+
+#mlist {
+  height: 34px;
+  width: 41px;
+  border-radius: 9px;
+}
+
+#firstcontrol {
+  display: flex;
+  position: fixed;
+  bottom: 169px;
+  justify-self: center;
+  justify-content: space-between;
+  width: 280px;
+}
+
+#MusicList {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#mutebutton {
+  display: none;
+  position: relative;
+  top: 444px;
+  right: 20px;
+}
+
+#listbackbutton {
+  position: relative;
+  top: 50px;
+  background-color: rgba(245, 0, 0, 0);
+  border: none;
+  width: 59px;
+  left: 5px;
+  display: none;
+}
+
+#Next {
+  background-color: rgba(0, 0, 0, 0.438);
+}
+
+#displayCurrentTime {
+  color: white;
+}
+
+#diplayDuraton {
+  color: white;
+}
+
+#progressBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  bottom: -19px;
+}
+
+#multipletaskArea {
+  position: fixed;
+  top: 0px;
+  border: 5px solid black;
+  z-index: 2;
+  background-image: url('assets/af181b29e104f4a37330ed84f03dc091.jpg');
+  background-size: cover;
+  width: 320px;
+  height: 935px;
+  background-color: black;
+}
+
+#seconbody {
+  /* display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: blur(4px);
+    height: 100%;
+    background-image: url('assets/af181b29e104f4a37330ed84f03dc091.jpg');
+    background-size: cover;
+     z-index:-1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/af181b29e104f4a37330ed84f03dc091.jpg');
+  background-size: cover;
+  filter: blur(5px);
+  z-index: -1;
+}
+
+#cantorbox1 {
+  width: 321px;
+  height: 250px;
+  position: fixed;
+  bottom: -10px;
+}
