@@ -196,22 +196,29 @@ progres.addEventListener("input", () => {
 
 
 
-
 // updata current time and duration
-setInterval(() => {
 
-    const duration = audio.duration;
-    const currentduration = audio.currentTime;
 
-    const minutes1 = Math.floor(currentduration / 60);
-    const seconds1 = Math.floor(currentduration % 60);
-    const minutes = Math.floor(duration / 60);
-    const seconds = Math.floor(duration % 60);
+    
+    setInterval(() => {
+        
+        
+        
+                const duration =  audio.duration;
+                const currentduration =  audio.currentTime;
+            
 
-    diplayDuraton.innerText = minutes + ":" + seconds;
-    displayCurrentTime.innerText = minutes1 + ":" + seconds1
+        const minutes1 = Math.floor(currentduration / 60);
+        const seconds1 = Math.floor(currentduration % 60);
+        const minutes = Math.floor(duration / 60);
+        const seconds = Math.floor(duration % 60);
 
-}, 100);
+        diplayDuraton.innerText = minutes + ":" + seconds;
+        displayCurrentTime.innerText = minutes1 + ":" + seconds1
+
+    
+}, 10);
+
 
 //sound ProgresBar
 Soundbtn.addEventListener("click", () => {

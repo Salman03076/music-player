@@ -143,7 +143,7 @@ setInterval(() => {
     const seconds = Math.floor(duration % 60);
     diplayDuraton.innerText = minutes + ":" + seconds;
     displayCurrentTime.innerText = minutes1 + ":" + seconds1;
-}, 100);
+}, 10);
 //sound ProgresBar
 Soundbtn.addEventListener("click", () => {
     soundprogress.style.display = "block";
