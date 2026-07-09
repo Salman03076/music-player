@@ -196,27 +196,36 @@ progres.addEventListener("input", () => {
 
 
 
+
 // updata current time and duration
 
 
-    
-    setInterval(() => {
-        
-        
-        
-                const duration =  audio.duration;
-                const currentduration =  audio.currentTime;
-            
 
-        const minutes1 = Math.floor(currentduration / 60);
-        const seconds1 = Math.floor(currentduration % 60);
-        const minutes = Math.floor(duration / 60);
-        const seconds = Math.floor(duration % 60);
+setInterval(() => {
 
-        diplayDuraton.innerText = minutes + ":" + seconds;
-        displayCurrentTime.innerText = minutes1 + ":" + seconds1
 
-    
+    const duration = audio.duration;
+    const currentduration = audio.currentTime;
+
+
+    const minutes1 = Math.floor(currentduration / 60);
+    const seconds1 = Math.floor(currentduration % 60);
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.floor(duration % 60);
+
+    diplayDuraton.innerText = minutes + ":" + seconds;
+    displayCurrentTime.innerText = minutes1 + ":" + seconds1
+
+
+
+    if (currentduration == duration) {
+        current++;
+        audio.src = audiodata[current]!;
+        audio.play()
+
+    }
+
+
 }, 10);
 
 
@@ -229,7 +238,7 @@ Soundbtn.addEventListener("click", () => {
     }, 3000);
 
     soundprogress.addEventListener("input", () => {
-        audio.volume = Number(soundprogress.value) / 100;
+        audio.volume = Number(soundprogress.value) / 200;
 
 
     })
@@ -355,21 +364,7 @@ listbackbutton.addEventListener("click", () => {
 
 });
 
-function autoplayermusic(): void {
-    if (audio.currentTime == audio.duration) {
-        current++;
-        audio.src = audiodata[current]!;
-        audio.play();
-    } else {
-        console.error("something wrong");
 
-
-    }
-}
-
-autoplayermusic()
-
-// const btn = document.querySelector("#btn") as HTMLButtonElement;
 
 
 
