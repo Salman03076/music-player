@@ -143,7 +143,12 @@ setInterval(() => {
     const seconds = Math.floor(duration % 60);
     diplayDuraton.innerText = minutes + ":" + seconds;
     displayCurrentTime.innerText = minutes1 + ":" + seconds1;
-}, 100);
+    if (currentduration == duration) {
+        current++;
+        audio.src = audiodata[current];
+        audio.play();
+    }
+}, 10);
 //sound ProgresBar
 Soundbtn.addEventListener("click", () => {
     soundprogress.style.display = "block";
@@ -151,7 +156,7 @@ Soundbtn.addEventListener("click", () => {
         soundprogress.style.display = "none";
     }, 3000);
     soundprogress.addEventListener("input", () => {
-        audio.volume = Number(soundprogress.value) / 100;
+        audio.volume = Number(soundprogress.value) / 200;
     });
 });
 // table ducaretion
@@ -231,17 +236,5 @@ listbackbutton.addEventListener("click", () => {
     displayCurrentTime.style.display = "block";
     diplayDuraton.style.display = "block";
 });
-function autoplayermusic() {
-    if (audio.currentTime == audio.duration) {
-        current++;
-        audio.src = audiodata[current];
-        audio.play();
-    }
-    else {
-        console.error("something wrong");
-    }
-}
-autoplayermusic();
 export {};
-// const btn = document.querySelector("#btn") as HTMLButtonElement;
 //# sourceMappingURL=main.js.map

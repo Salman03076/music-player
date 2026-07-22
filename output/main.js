@@ -80,15 +80,15 @@ play.addEventListener("click", () => {
     stop.style.display = "block";
     play.style.display = "none";
     let rotetedeg = 0;
-    if (stop) {
-        for (rotetedeg += 0; rotetedeg < 360;) {
-            rotetedeg++;
-            cenorimg.style.transform = `rotate(${rotetedeg}deg)`;
-        } // speed
-    }
-    else {
-        rotetedeg = 0;
-    }
+    // if (play) {
+    for (rotetedeg += 0; rotetedeg < 360;) {
+        rotetedeg++;
+        // cenorimg.style.rotate ="360";
+        cenorimg.style.transform = `rotate(${rotetedeg}deg)`;
+    } // speed
+    // } else {
+    //     rotetedeg = 0;
+    // }
 });
 // button
 stop.addEventListener("click", () => {
@@ -145,6 +145,7 @@ setInterval(() => {
     displayCurrentTime.innerText = minutes1 + ":" + seconds1;
     if (currentduration == duration) {
         current++;
+        cenorimg.src = templete[current];
         audio.src = audiodata[current];
         audio.play();
     }

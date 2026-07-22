@@ -96,6 +96,8 @@ let current: number = 0;
 cenorimg.src = templete[current] as string;
 
 
+
+
 // first song load
 audio.src = audiodata[current] as string;
 
@@ -105,47 +107,48 @@ play.addEventListener("click", () => {
     audio.play();
     stop.style.display = "block";
     play.style.display = "none"
-
+    
     let rotetedeg = 0;
-
-    if (stop) {
-
+    
+    // if (play) {
+        
         for (rotetedeg += 0; rotetedeg < 360;) {
             rotetedeg++
-
+            
+            // cenorimg.style.rotate ="360";
             cenorimg.style.transform = `rotate(${rotetedeg}deg)`;
         } // speed
+        
 
+    // } else {
+    //     rotetedeg = 0;
 
-    } else {
-        rotetedeg = 0;
+    // }
 
-    }
-
-
+    
 
 });
 
 // button
 stop.addEventListener("click", () => {
     // rotetedeg += 0;
-
+    
     audio.pause();
     stop.style.display = "none";
     play.style.display = "block"
-
+    
 });
 
 
 //  Next Button
 
 Next.addEventListener("click", () => {
-
+    
     stop.style.display = "block";
     play.style.display = "none"
-
+    
     current++;
-
+    
     if (current >= audiodata.length) {
         current = 0;
     }
@@ -219,7 +222,9 @@ setInterval(() => {
 
 
     if (currentduration == duration) {
+
         current++;
+        cenorimg.src = templete[current] as string;
         audio.src = audiodata[current]!;
         audio.play()
 
